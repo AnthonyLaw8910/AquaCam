@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-weather_info = {"city": "Toronto", "weather": "sunny", "temperature": "25°C"}
 # Route to return student number
 @app.route('/')
 def home():
@@ -15,10 +14,13 @@ def webhook():
     # Extract intent name
     intent_name = req.get("queryResult", {}).get("intent", {}).get("displayName")
 
+    # Define weather_info dictionary
+    weather_info = {"city": "Toronto", "weather": "sunny", "temperature": "25°C"}
+
     # Response for weather_info intent
 
     if intent_name == "weather_info":
-        response_text = f"Today's weather in {weather_info['city']} is {weather_info['weather']} with a high of {weather_info['temperature']}."
+        response_text = f"Today's weather in {weather_info["city"]} is {weather_info["weather"]} with a high of {weather_info["temperature"]}."
     else:
         response_text = "I am sorry, I do not understand"
 
