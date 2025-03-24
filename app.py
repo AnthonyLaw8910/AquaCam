@@ -1,14 +1,14 @@
 from flask import Flask, request, jsonify
 
-application = Flask(__name__)
+app = Flask(__name__)
 
 # Route to return student number
-@application.route('/')
+@app.route('/')
 def home():
     return jsonify({"student_number": "200599082"})
 
 # Webhook route for Dialogflow fulfillment
-@application.route('/webhook', methods=["POST"])
+@app.route('/webhook', methods=["POST"])
 def webhook():
     req = request.get_json(silent=True, force=True)
 
