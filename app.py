@@ -17,8 +17,6 @@ def webhook():
 
     # Response for weather_info intent
 
-    response_text = "Default response"
-
     if intent_name == "weather_info":
         response_text = "Today's weather is sunny with a high of 25°C."
 
