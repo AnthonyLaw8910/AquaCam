@@ -20,7 +20,7 @@ def webhook():
     # Response for weather_info intent
 
     if intent_name == "weather_info":
-        response_text = f"Today's weather in {weather_info["city"]} is {weather_info["weather"]} with a high of {weather_info["temperature"]}."
+        response_text = f"Today's weather in {weather_info['city']} is {weather_info['weather']} with a high of {weather_info['temperature']}."
     else:
         response_text = "I am sorry, I do not understand"
 
