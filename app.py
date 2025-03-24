@@ -19,6 +19,8 @@ def webhook():
 
     if intent_name == "weather_info":
         response_text = "Today's weather is sunny with a high of 25°C."
+    else:
+        response_text = "I am sorry, I do not understand"
 
     return jsonify({"fulfillmentText": response_text})
 
